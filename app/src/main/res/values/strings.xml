@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Мудрость</string>
+    <string name="vdohnovenie">Где искать вдохновение?</string>
+    <string name="kak_motivirovat_sebya">Как себя мотивировать?</string>
+    <string name="tridtsat_zakonov_zhizni">30 законов жизни</string>
+    <string name="vliyaem_na_lyudey">Влияем на людей</string>
+    <string name="zastav_sebya_rabotat">Заставь себя работать</string>
+    <string name="mirovozrenie">Мировозрение</string>
+    <string name="vospitanie">Правила воспитания детей</string>
+    <string name="zakoni_semyi">Законы семейной жизни</string>
+    <string name="chto_takoe_lubov">Что такое любовь?</string>
+    <string name="kak_stat_bogatim">Как стать богатым?</string>
+</resources>

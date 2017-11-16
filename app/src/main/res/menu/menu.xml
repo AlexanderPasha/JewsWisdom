@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/mirovozrenie"
+        android:id="@+id/menu3"
+        app:showAsAction="never"
+        android:orderInCategory="3"/>
+    <item android:title="@string/vospitanie"
+        android:id="@+id/menu4"
+        app:showAsAction="never"
+        android:orderInCategory="4"/>
+    <item android:title="@string/zakoni_semyi"
+        android:id="@+id/menu5"
+        app:showAsAction="never"
+        android:orderInCategory="5"/>
+    <item android:title="@string/chto_takoe_lubov"
+        android:id="@+id/menu6"
+        app:showAsAction="never"
+        android:orderInCategory="6"/>
+    <item android:title="@string/kak_stat_bogatim"
+        android:id="@+id/menu7"
+        app:showAsAction="never"
+        android:orderInCategory="7"/>
+    <item android:title="@string/vdohnovenie"
+        android:id="@+id/menu8"
+        app:showAsAction="never"
+        android:orderInCategory="8"/>
+    <item android:title="@string/kak_motivirovat_sebya"
+        android:id="@+id/menu9"
+        app:showAsAction="never"
+        android:orderInCategory="9"/>
+    <item android:title="@string/tridtsat_zakonov_zhizni"
+        android:id="@+id/menu10"
+        app:showAsAction="never"
+        android:orderInCategory="10"/>
+    <item android:title="@string/vliyaem_na_lyudey"
+        android:id="@+id/menu11"
+        app:showAsAction="never"
+        android:orderInCategory="11"/>
+    <item android:title="@string/zastav_sebya_rabotat"
+        android:id="@+id/menu12"
+        app:showAsAction="never"
+        android:orderInCategory="12"/>
+
+</menu>
