@@ -49,9 +49,12 @@ public class MainActivity extends AppCompatActivity {
     TextView textView;
     @BindView(R.id.button)
     Button button;
+    @BindView(R.id.buttonTest)
+    Button buttonTest;
 
     private SQLiteDatabase database;
-    private PopupMenu popup;
+    private PopupMenu popupChtivo;
+    private PopupMenu popupTests;
     private MediaPlayer mp;
     private Animation animation;
     private List<String> dataList;
@@ -69,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         adView.loadAd(adRequest);
 
-        dataList  = new ArrayList<>();
+        dataList = new ArrayList<>();
         mp = MediaPlayer.create(MainActivity.this, R.raw.mysound);
 
-        animation  = AnimationUtils.loadAnimation(this, R.anim.alphaprozrachnost1);
+        animation = AnimationUtils.loadAnimation(this, R.anim.alphaprozrachnost1);
 
         //Работа с БД
         DataBaseHelper myDbHelper = new DataBaseHelper(this);
@@ -88,10 +91,10 @@ public class MainActivity extends AppCompatActivity {
         } else Log.v(TAG, "Таблица пустая");
 
         //Всплывающее меню чтива
-        popup = new PopupMenu(this, buttonBook);
-        MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.menu, popup.getMenu());
-        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+        popupChtivo = new PopupMenu(this, buttonBook);
+        MenuInflater inflater = popupChtivo.getMenuInflater();
+        inflater.inflate(R.menu.menu_chtivo, popupChtivo.getMenu());
+        popupChtivo.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 Intent intent = new Intent(getApplicationContext(), ActivityTextView.class);
@@ -153,6 +156,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        popupTests = new PopupMenu(this, buttonTest);
+        MenuInflater menuInflater = popupTests.getMenuInflater();
+        menuInflater.inflate(R.menu.menu_tests, popupTests.getMenu());
+        popupTests.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                Intent intent;
+                switch (item.getItemId()) {
+                    case R.id.menu1:
+                        intent = new Intent(getApplicationContext(), ActivityTestUverenost.class);
+                        startActivity(intent);
+                        break;
+                    case R.id.menu2:
+                        intent = new Intent(getApplicationContext(), ActivityTestMindSex.class);
+                        startActivity(intent);
+                        break;
+                }
+                return true;
+            }
+
+        });
+
     }
 
     /**
@@ -189,17 +214,21 @@ public class MainActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
-    @OnClick({R.id.buttonBook, R.id.buttonShare, R.id.buttonRate, R.id.button})
+    @OnClick({R.id.buttonBook, R.id.buttonShare, R.id.buttonRate, R.id.button, R.id.buttonTest})
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.buttonBook:
                 soundClick();
-                popup.show();
+                popupChtivo.show();
+                break;
+            case R.id.buttonTest:
+                soundClick();
+                popupTests.show();
                 break;
             case R.id.buttonShare:
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, textView.getText()+"\n \n"+
+                sendIntent.putExtra(Intent.EXTRA_TEXT, textView.getText() + "\n \n" +
                         "https://play.google.com/store/apps/details?id=com.mannydev.jewswisdom");
                 sendIntent.setType("text/plain");
                 startActivity(sendIntent);
@@ -219,7 +248,9 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void soundClick(){
+    private void soundClick() {
         mp.start();
     }
+
+
 }

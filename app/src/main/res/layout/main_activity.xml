@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ads="http://schemas.android.com/apk/lib/com.google.ads"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fon"
@@ -38,6 +37,15 @@
             android:gravity="center_vertical"
             android:layout_marginRight="15dp"
             android:background="@drawable/ic_lightbulb_outline_black_24dp"
+            android:text="" />
+        <Button
+            android:id="@+id/buttonTest"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="right"
+            android:gravity="center_vertical"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/ic_check_black_24dp"
             android:text="" />
         <Button
             android:id="@+id/buttonShare"
@@ -85,12 +93,11 @@
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:elevation="6dp"
                 android:textStyle="italic"
-                android:text="Нажми на кнопку внизу и стань мудрее!"
+                android:text="@string/start_main"
                 android:textAlignment="center"
                 android:textColor="@color/text_color"
-                android:textSize="25dp" />
+                android:textSize="25sp" />
         </LinearLayout>
     </ScrollView>
 
